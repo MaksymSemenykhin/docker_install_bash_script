@@ -1,6 +1,6 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/MaksymSemenykhin/bash_scripts/master/output.sh)
-dockerFodler="/docker"
+dockerFolder="/docker"
 
 print_title 'SET UP THE REPOSITORY'
 
@@ -34,7 +34,7 @@ print_info 'Installing the latest version of Docker Engine - Community and conta
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose  -yqq
 
 print_title 'Folders prepare'
-mkdir $dockerFodler -p
+mkdir $dockerFolder -p
 
 print_title 'Result:'
 docker -v
