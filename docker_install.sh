@@ -35,13 +35,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
 print_title 'Folders prepare'
 mkdir /docker -p
 
-print_title 'Set ubuntu user as docker folder owner'
-chown ubuntu:ubuntu /docker -R
-
-print_title 'Add ubuntu user to docker group'
-sudo groupadd docker
-sudo usermod -aG docker ubuntu
-
 print_title 'Result:'
 docker -v
 docker-compose -v
