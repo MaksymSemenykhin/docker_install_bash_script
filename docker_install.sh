@@ -1,6 +1,5 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/MaksymSemenykhin/bash_scripts/master/output.sh)
-composeVersion="1.25.4"
 dockerFodler="/docker"
 
 print_title 'SET UP THE REPOSITORY'
@@ -36,11 +35,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
 
 print_title 'Folders prepare'
 mkdir $dockerFodler -p
-
-#print_title 'Folders Docker-compose install'
-
-#sudo curl -L "https://github.com/docker/compose/releases/download/$composeVersion/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-#sudo chmod +x /usr/local/bin/docker-compose
 
 print_title 'Result:'
 docker -v
