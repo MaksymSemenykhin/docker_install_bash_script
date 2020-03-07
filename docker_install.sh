@@ -32,5 +32,15 @@ sudo apt-get update
 print_info 'Installing the latest version of Docker Engine - Community and containerd'
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
+print_title 'Folders prepare'
+mkdir /docker -p
+
+print_title 'Set ubuntu user as docker folder owner'
+mkdir chown ubuntu:ubuntu /docker -R
+
+print_title 'Add ubuntu user to docker group'
+sudo groupadd docker
+sudo usermod -aG docker ubuntu
+
 print_title 'Result:'
 docker -v
