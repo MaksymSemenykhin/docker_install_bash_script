@@ -30,11 +30,11 @@ print_info 'Update the apt package index'
 sudo apt-get update
 
 print_info 'Installing the latest version of Docker Engine - Community and containerd'
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 print_title 'Folders prepare'
 mkdir /docker -p
 
 print_title 'Result:'
 docker -v
-docker-compose -v
+#docker-compose -v
