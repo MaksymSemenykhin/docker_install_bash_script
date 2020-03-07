@@ -28,10 +28,10 @@ sudo add-apt-repository \
 print_title 'Updating the apt package index'
 
 print_info 'Update the apt package index'
-sudo apt-get update
+sudo apt-get update  -qq
 
 print_info 'Installing the latest version of Docker Engine - Community and containerd'
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose  -yqq
 
 print_title 'Folders prepare'
 mkdir $dockerFodler -p
