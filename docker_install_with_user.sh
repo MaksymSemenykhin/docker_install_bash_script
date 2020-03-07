@@ -1,5 +1,7 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/MaksymSemenykhin/bash_scripts/master/output.sh)
+dockerFodler="/docker"
+dockeruser="ubuntu"
 
 print_title 'SET UP THE REPOSITORY'
 
@@ -33,14 +35,14 @@ print_info 'Installing the latest version of Docker Engine - Community and conta
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
 
 print_title 'Folders prepare'
-mkdir /docker -p
+mkdir $dockerFodler -p
 
-print_title 'Set ubuntu user as docker folder owner'
-chown ubuntu:ubuntu /docker -R
+print_title "Set $dockeruser user as docker folder owner"
+chown $dockeruser:$dockeruser /docker -R
 
-print_title 'Add ubuntu user to docker group'
+print_title "Add $dockeruser user to docker group"
 sudo groupadd docker
-sudo usermod -aG docker ubuntu
+sudo usermod -aG docker $dockeruser
 
 print_title 'Result:'
 docker -v
